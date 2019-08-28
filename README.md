@@ -45,7 +45,7 @@ Redmine plugin for provides project specific themes
 
 note: if you leave this field empty (select empty menu item), then this project gets the standard theme selected in Administration->Settings->Display
 
-**Have fun!*
+**Have fun!**
 
 ### Localisations
 
