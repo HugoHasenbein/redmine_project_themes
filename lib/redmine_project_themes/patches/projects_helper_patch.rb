@@ -19,6 +19,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 
+module RedmineProjectThemes
   module Patches
     module ProjectsHelperPatch
       def self.included(base)
