@@ -1,0 +1,23 @@
+<%= render_flash_messages %>
+<%- flash.clear %>
+<%= labelled_form_for @project, 
+                     { :url => project_themes_settings_path(@project),
+                       :method => :put,
+                       :remote => true,
+                       :html => {:id => "project_themes_settings-form" }
+                     } do |f| %>
+
+  <%= content_tag(:div, :class => ("flash error"  if !@project.errors[:ui_theme].empty? ) ) do %>
+    <p>  
+      <%= f.select :ui_theme, [["",""]] + Redmine::Themes.themes.collect {|t| [t.name, t.id]}, :blank => :label_default, :label => :label_theme %>
+       <a class='icon icon-help' href='#' title='<%= "#{l(:label_help)}" %>' onclick='$("#help_ui_theme").toggle(); return false;'><%= l(:label_help) %></a>
+       <br>
+       <span id="help_ui_theme" class="info" style="display: none;">
+         <em class="info"><%= l(:help_ui_theme) %></em>
+       </span>
+    </p>
+  <%- end %>
+
+  <%= f.submit l(:label_save), :name => 'save' %>
+
+<%- end #form_for %>
