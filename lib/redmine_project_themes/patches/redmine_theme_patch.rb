@@ -30,9 +30,11 @@ module RedmineProjectThemes
 
           def current_theme
           
-            unless (instance_variable_defined?(:@current_theme) && instance_variable_defined?(:@current_project_for_theme) && @current_project_for_theme == @project )
-              @current_project_for_theme = @project
-              @current_theme = (@project && @project.ui_theme.present?) ? Redmine::Themes.theme(@project.ui_theme) : Redmine::Themes.theme(Setting.ui_theme)
+            if instance_variable_defined?(:@project) && @project.module_enabled?(:redmine_project_themes)
+              unless (instance_variable_defined?(:@current_theme) && instance_variable_defined?(:@current_project_for_theme) && @current_project_for_theme == @project )
+                @current_project_for_theme = @project
+                @current_theme = (@project && @project.ui_theme.present?) ? Redmine::Themes.theme(@project.ui_theme) : Redmine::Themes.theme(Setting.ui_theme)
+              end
             end
             
             @current_theme
