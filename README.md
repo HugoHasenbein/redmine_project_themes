@@ -1,6 +1,6 @@
 # redmine_project_themes
 
-Redmine plugin for provides project specific themes
+Redmine plugin for providing project specific themes
 
 ### Use case(s)
 
