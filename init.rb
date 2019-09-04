@@ -1,6 +1,6 @@
 # encoding: utf-8
 #
-# Redmine plugin for provides project specific themes
+# Redmine plugin for providing project specific themes
 #
 # Copyright © 2019 Stephan Wenzel <stephan.wenzel@drwpatent.de>
 #
