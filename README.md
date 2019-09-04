@@ -18,8 +18,6 @@ Redmine plugin for providing project specific themes
 
 `sudo /etc/init.d/apache2 restart`
 
-(no migration is necessary)
-
 ### Uninstall
 
 1. migrate back
@@ -28,7 +26,7 @@ Redmine plugin for providing project specific themes
 
 2. go to plugins folder, delete plugin folder redmine_project_themes
 
-`rm -r redmine_tint_issues`
+`rm -r redmine_project_themes`
 
 3. restart server f.i. 
 
