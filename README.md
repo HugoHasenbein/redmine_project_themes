@@ -18,6 +18,8 @@ Redmine plugin for providing project specific themes
 
 `sudo /etc/init.d/apache2 restart`
 
+(no migration is necessary)
+
 ### Uninstall
 
 1. migrate back
@@ -43,15 +45,28 @@ Redmine plugin for providing project specific themes
 
 note: if you leave this field empty (select empty menu item), then this project gets the standard theme selected in Administration->Settings->Display
 
+### only redmine 4+ 
+
+* Go to Projects and query for specfic theme 
+
 **Have fun!**
 
 ### Localisations
+
+* 1.0.3
+  - English
+  - German
+  - French, thanks to Richard Lehaut
 
 * 1.0.2
   - English
   - German
 
 ### Change-Log* 
+
+**1.0.3**
+ - added support for redmine 4+
+ - added query for theme on projects page
 
 **1.0.2**
  - simplified module support

@@ -2,7 +2,7 @@
 #
 # Redmine plugin for providing project specific themes
 #
-# Copyright © 2019 Stephan Wenzel <stephan.wenzel@drwpatent.de>
+# Copyright © 2019-2020 Stephan Wenzel <stephan.wenzel@drwpatent.de>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,7 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-#
 
 module RedmineProjectThemes
   module Patches
@@ -28,7 +27,13 @@ module RedmineProjectThemes
         base.class_eval do
           unloadable
           
-          alias_method_chain :project_settings_tabs, :project_themes_setting
+          if Rails::VERSION::MAJOR >= 5
+            alias_method :project_settings_tabs_without_project_themes_setting, :project_settings_tabs
+            alias_method :project_settings_tabs, :project_settings_tabs_with_project_themes_setting
+          else
+            alias_method_chain :project_settings_tabs, :project_themes_setting
+          end
+          
         end
       end
       

@@ -18,23 +18,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-de:
-  
+fr:
+
   # ---------- General Settings ----------
   # Plugin names, etc.
-  project_module_redmine_project_themes: "Projekt-Theme"
-  
+  project_module_redmine_project_themes: "Thëme du projet"
+
   # ---------- Permission Settings ----------
   # Permission settings in Administration -> Roles and Permissions
-  permission_edit_project_themes_settings: "Project-Design-Stil Einstellungen ändern"
-  
-  
+  permission_edit_project_themes_settings: "Modifier le paramëtre du thëme du projet"
+
+
   # ---------- Project Settings ----------
-  # Project settings in Project -> Configuration ->  
-  label_project_themes_settings: "Design-Stil"
-  label_project_theme: "Design-Stil"
-  
-  field_ui_theme: "Theme"
-  help_ui_theme: "Hier kann unabhängig vom globalen Redmine-Theme ein Theme für das Projekt gewählt werden."
-  
-  label_project_theme_sucessfully_updated: "Design-Stil für das Projekt %{project} aktualisiert."
+  # Project settings in Project -> Configuration ->
+  label_project_themes_settings: "Thëme du projet"
+  label_project_theme: "Thëme du projet"
+
+  field_ui_theme: "Thëme"
+  help_ui_theme: "Ici, un thëme individuel pour un projet peut Ítre choisi."
+
+  label_project_theme_sucessfully_updated: "Mise ‡ jour du thëme du projet %{project} avec succës."

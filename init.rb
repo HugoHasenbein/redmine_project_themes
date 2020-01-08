@@ -2,7 +2,7 @@
 #
 # Redmine plugin for providing project specific themes
 #
-# Copyright © 2019 Stephan Wenzel <stephan.wenzel@drwpatent.de>
+# Copyright © 2019-2020 Stephan Wenzel <stephan.wenzel@drwpatent.de>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -18,14 +18,34 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
+# 0.0.1 - first release
+#
+# 1.0.0 
+#  - running on Redmine 3.4.6, 3.4.11
+#
+# 1.0.1
+# - added module support
+# - cleaned code
+#
+# 1.0.2
+# - simplified module support
+# - cleaned code
+#
+# 1.0.2 - supports Rails 5+, redmine 4+
+#       - includes French localization
+#
+# 1.0.3
+# - added query for theme on projects page
+#
+#
 
 require 'redmine'
 
 Redmine::Plugin.register :redmine_project_themes do
   name 'Redmine Project Themes'
   author 'Stephan Wenzel'
-  description 'This plugin provides project specific themes'
-  version '0.0.1'
+  description 'Redmine plugin for providing project specific themes'
+  version '1.0.3'
   url 'https://github.com/HugoHasenbein/redmine_project_themes'
   author_url 'https://github.com/HugoHasenbein/redmine_project_themes'
   requires_redmine version_or_higher: '3.4'
