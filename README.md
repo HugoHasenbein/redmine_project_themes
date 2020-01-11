@@ -2,6 +2,12 @@
 
 Redmine plugin for providing project specific themes
 
+### if you come from an earlier version, prior to 1.1.0
+
+migrate eback first by 
+
+`bundle exec rake redmine:plugins:migrate RAILS_ENV=production VERSION=0 NAME=redmine_project_themes`
+
 ### Use case(s)
 
 * when working with many projects it is advantegous to clone existing themes and change only some aspects like main menu bar color or background colors. This way it is easy to recognize in which project one is working
@@ -56,8 +62,8 @@ note: if you leave this field empty (select empty menu item), then this project 
 
 ### Change-Log* 
 
-**1.1.2**
- - supports redmine +
+**1.1.0**
+ - supports redmine 4+
  - cleaned code
  
 **1.0.2**
