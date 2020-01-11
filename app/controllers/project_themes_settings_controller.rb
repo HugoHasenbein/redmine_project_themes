@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
 class ProjectThemesSettingsController < ApplicationController
 
@@ -29,18 +30,14 @@ class ProjectThemesSettingsController < ApplicationController
   def update
   
     begin
-      @project.update_attribute(:ui_theme, params.dig(:project, :ui_theme))
+      @project.update_attribute(:theme_id, params.dig(:project, :theme_id))
       flash[:notice]= l(:label_project_theme_sucessfully_updated, :project => @project.name)
+      
     rescue Exception => e
       flash[:error]= e.message
     end
     
-    respond_to do |format|
-    
-      format.js do
-      end
-     
-    end
+    redirect_to :back
      
   end #def
   

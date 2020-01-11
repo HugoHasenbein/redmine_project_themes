@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
 module RedmineProjectThemes
   module Patches    
@@ -24,29 +25,30 @@ module RedmineProjectThemes
     
       def self.included(base) # :nodoc:
       
-        if Rails::VERSION::MAJOR >= 5
-          base.send(:include, InstanceMethods)
-          base.class_eval do
-            def self.ui_theme_for_group_statement
-              "CASE #{self.table_name}.ui_theme " + 
-              Redmine::Themes.themes.map { |t| "WHEN '#{t.id}' THEN '#{Redmine::Themes.theme(t.id).name}'" }.join(" ") +
-              "END "
-            end #def
-          end #class_eval
-        end #if
+        base.send(:include, InstanceMethods)
+        base.class_eval do
+        
+          def self.themes_for_group_statement
+            "CASE #{self.table_name}.theme_id " + 
+              Redmine::Themes.themes.map { |t| "WHEN '#{t.id}' THEN '#{t.name}'" }.join(" ") +
+            " END"
+          end #def
+          
+        end #class_eval
         
       end #included
       
       module InstanceMethods
         
-        def ui_theme
-          Redmine::Themes.theme(super) && Redmine::Themes.theme(super).name
+        def theme_name
+          theme.name if theme
+        end #def
+        
+        def theme
+          Redmine::Themes.theme(self.theme_id)
         end #def
         
       end #module InstanceMethods
-      
-      module ClassMethods
-      end  #module ClassMethods
       
     end  #module
   end  #module

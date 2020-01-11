@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
+#
 
 en:
   
@@ -35,7 +35,8 @@ en:
   label_project_themes_settings: "Project-Theme"
   label_project_theme: "Project-Theme"
   
-  field_ui_theme: "Theme"
-  help_ui_theme: "Here an individual theme for a project can be chosen."
+  field_theme_name: "Theme-Name"
   
-  label_project_theme_sucessfully_updated: "Updated Project-Theme for project %{project} sucessfully."
+  field_theme: "Theme"
+  help_theme: "Here an individual theme for a project can be chosen."
+  

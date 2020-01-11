@@ -19,24 +19,23 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 # 0.0.1 - first release
-#
+# 
+# 
 # 1.0.0 
 #  - running on Redmine 3.4.6, 3.4.11
-#
+# 
 # 1.0.1
-# - added module support
-# - cleaned code
+#  - added module support
+#  - cleaned code
 #
-# 1.0.2
-# - simplified module support
-# - cleaned code
-#
-# 1.0.2 - supports Rails 5+, redmine 4+
-#       - includes French localization
-#
+# 1.0.2 
+#  - supports Rails 5+, redmine 4+, project queries
+#  - includes French localization
+# 
 # 1.0.3
-# - added query for theme on projects page
-#
+#  - added query for theme on projects page
+# 
+# 1.1.0 - complete code revamp and simplification
 #
 
 require 'redmine'
@@ -44,8 +43,8 @@ require 'redmine'
 Redmine::Plugin.register :redmine_project_themes do
   name 'Redmine Project Themes'
   author 'Stephan Wenzel'
-  description 'Redmine plugin for providing project specific themes'
-  version '1.0.3'
+  description 'This plugin provides project specific themes'
+  version '1.1.0'
   url 'https://github.com/HugoHasenbein/redmine_project_themes'
   author_url 'https://github.com/HugoHasenbein/redmine_project_themes'
   requires_redmine version_or_higher: '3.4'
@@ -53,8 +52,6 @@ Redmine::Plugin.register :redmine_project_themes do
   #---------------------------------------------------------------------------------------
   # Permissions
   #---------------------------------------------------------------------------------------
-  
-  # this adds the module to the project configuration
   project_module :redmine_project_themes do
   
     permission :edit_project_themes_settings, 

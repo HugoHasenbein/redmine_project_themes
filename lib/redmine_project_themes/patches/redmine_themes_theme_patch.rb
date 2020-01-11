@@ -19,24 +19,34 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 
-de:
-  
-  # ---------- General Settings ----------
-  # Plugin names, etc.
-  project_module_redmine_project_themes: "Projekt-Theme"
-  
-  # ---------- Permission Settings ----------
-  # Permission settings in Administration -> Roles and Permissions
-  permission_edit_project_themes_settings: "Project-Design-Stil Einstellungen ändern"
-  
-  
-  # ---------- Project Settings ----------
-  # Project settings in Project -> Configuration ->  
-  label_project_themes_settings: "Projekt-Theme"
-  label_project_theme: "Projekt-Theme"
-  
-  field_theme_name: "Theme-Name"
-  
-  field_theme: "Theme"
-  help_theme: "Hier kann unabhängig vom globalen Redmine-Theme ein Theme für das Projekt gewählt werden."
-  
+module RedmineProjectThemes
+  module Patches
+    module RedmineThemesThemePatch
+      def self.included(base)
+        base.send(:include, InstanceMethods)
+        
+        base.class_eval do
+          unloadable
+          
+          def to_s
+            name
+          end #def
+          
+          def inspect
+            "#<#{ self.to_s} #{ self.instance_variables.collect{ |e| "#{e}: #{instance_variable_get(e)}" }.join(', ') }>"
+          end #def
+        end
+      end
+      
+      module InstanceMethods
+      end
+    end
+  end
+end
+
+unless Redmine::Themes::Theme.included_modules.include?(RedmineProjectThemes::Patches::RedmineThemesThemePatch)
+  Redmine::Themes::Theme.send(:include, RedmineProjectThemes::Patches::RedmineThemesThemePatch)
+end
+
+
+

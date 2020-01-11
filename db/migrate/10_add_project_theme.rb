@@ -17,16 +17,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
-if Rails::VERSION::MAJOR >= 5
+if Redmine::VERSION::MAJOR >= 4
 
   class AddProjectTheme < ActiveRecord::Migration[5.1]
     def self.up
-      add_column :projects, :ui_theme, :string
+      add_column :projects, :theme_id, :string
     end
   
     def self.down
-      remove_column :projects, :ui_theme
+      remove_column :projects, :theme_id
     end
   end
   
@@ -34,11 +35,11 @@ else
 
   class AddProjectTheme < ActiveRecord::Migration
     def self.up
-      add_column :projects, :ui_theme, :string
+      add_column :projects, :theme_id, :string
     end
   
     def self.down
-      remove_column :projects, :ui_theme
+      remove_column :projects, :theme_id
     end
   end
 

@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
 module RedmineProjectThemes
   module Patches    
@@ -24,38 +25,28 @@ module RedmineProjectThemes
     
       def self.included(base) # :nodoc:
         
-        if Rails::VERSION::MAJOR >= 5
-        
-          base.send(:include, InstanceMethods)
-          base.class_eval do 
-            unloadable
+        base.send(:prepend, InstanceMethods)
+        base.class_eval do 
+          unloadable
           
-            alias_method :initialize_available_filters_without_ui_themes, :initialize_available_filters
-            alias_method :initialize_available_filters, :initialize_available_filters_with_ui_themes
-            
-            self.available_columns += [
-               QueryColumn.new(:ui_theme, :sortable => "#{Project.table_name}.ui_theme", :groupable => Project.ui_theme_for_group_statement)
-            ]
-            
-          end
+          self.available_columns += [
+            QueryColumn.new(:theme_name, :sortable => "#{Project.table_name}.theme_id", :groupable => Project.themes_for_group_statement)
+          ]
           
-        end #if
+        end
         
       end #included
       
       module InstanceMethods
       
-        def initialize_available_filters_with_ui_themes
-          initialize_available_filters_without_ui_themes
-           add_available_filter "ui_theme", 
-             :type => :list_optional,
-             :values => Redmine::Themes.themes.map{|t| [t.name, t.id]}
+        def initialize_available_filters
+          super
+          add_available_filter "theme_id", 
+            :type => :list_optional,
+            :values => Redmine::Themes.themes.map{|t| [t.name, t.id]}
         end #def
         
       end #module InstanceMethods
-      
-      module ClassMethods
-      end  #module ClassMethods
       
     end  #module
   end  #module

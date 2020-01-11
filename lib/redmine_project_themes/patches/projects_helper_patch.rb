@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
 module RedmineProjectThemes
   module Patches
@@ -41,8 +42,6 @@ module RedmineProjectThemes
         # Append tab for issue templates to project settings tabs.
         def project_settings_tabs_with_project_themes_setting
           tabs = project_settings_tabs_without_project_themes_setting
-        
-          @project_themes_setting = @project.ui_theme
           
           action = {  name:         'project_themes_settings',
                       partial:      'project_themes_settings/update',
