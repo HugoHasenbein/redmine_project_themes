@@ -23,20 +23,19 @@ fr:
 
   # ---------- General Settings ----------
   # Plugin names, etc.
-  project_module_redmine_project_themes: "Thëme du projet"
+  project_module_redmine_project_themes: "Thème du projet"
 
   # ---------- Permission Settings ----------
   # Permission settings in Administration -> Roles and Permissions
-  permission_edit_project_themes_settings: "Modifier le paramëtre du thëme du projet"
+  permission_edit_project_themes_settings: "Modifier le paramètre du thème du projet"
 
 
   # ---------- Project Settings ----------
   # Project settings in Project -> Configuration ->
-  label_project_themes_settings: "Thëme du projet"
-  label_project_theme: "Thëme du projet"
-  
-  field_theme_name: "Nom du Thëme"
-  
-  field_theme: "Thëme"
-  help_theme: "Ici, un thëme individuel pour un projet peut Ítre choisi."
+  label_project_themes_settings: "Thème du projet"
+  label_project_theme: "Thème du projet"
 
+  field_theme_name: "Nom du Thème"
+
+  field_theme: "Thème"
+  help_theme: "Ici, un thème individuel pour un projet peut être choisi."
