@@ -4,7 +4,7 @@ Redmine plugin for providing project specific themes
 
 ### if you come from an earlier version, prior to 1.1.0
 
-migrate eback first by 
+migrate back first by 
 
 `bundle exec rake redmine:plugins:migrate RAILS_ENV=production VERSION=0 NAME=redmine_project_themes`
 
