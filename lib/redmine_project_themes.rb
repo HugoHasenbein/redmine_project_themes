@@ -19,11 +19,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 
-  require 'redmine_project_themes/patches/project_patch'
-  require 'redmine_project_themes/patches/projects_helper_patch'
-  require 'redmine_project_themes/patches/redmine_themes_helper_patch'
-  require 'redmine_project_themes/patches/redmine_themes_theme_patch'
-  
-  if Redmine::VERSION::MAJOR >= 4
-    require 'redmine_project_themes/patches/project_query_patch'
-  end #if
+require_relative 'redmine_project_themes/patches/project_patch'
+require_relative 'redmine_project_themes/patches/projects_helper_patch'
+require_relative 'redmine_project_themes/patches/redmine_themes_helper_patch'
+require_relative 'redmine_project_themes/patches/redmine_themes_theme_patch'
+require_relative 'redmine_project_themes/patches/project_query_patch'

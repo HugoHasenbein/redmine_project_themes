@@ -41,6 +41,8 @@
 # 1.1.1 
 #  - correction of French accents
 #
+# 1.2.1
+#  - madfe compatible with zeitwerk
 
 require 'redmine'
 
@@ -48,7 +50,7 @@ Redmine::Plugin.register :redmine_project_themes do
   name 'Redmine Project Themes'
   author 'Stephan Wenzel'
   description 'This plugin provides project specific themes'
-  version '1.1.1'
+  version '1.2.1'
   url 'https://github.com/HugoHasenbein/redmine_project_themes'
   author_url 'https://github.com/HugoHasenbein/redmine_project_themes'
   requires_redmine version_or_higher: '3.4'
@@ -64,5 +66,5 @@ Redmine::Plugin.register :redmine_project_themes do
   end
 end
 
-require 'redmine_project_themes'
+require_relative 'lib/redmine_project_themes'
 
