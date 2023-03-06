@@ -55,7 +55,7 @@ note: if you leave this field empty (select empty menu item), then this project 
 
 ### Localisations
 
-* 1.0.2
+* 1.2.0
   - English
   - German
   - French, thanks to Richard Lehaut
@@ -63,7 +63,7 @@ note: if you leave this field empty (select empty menu item), then this project 
 ### Change-Log* 
 
 **1.2.0
- - supports zeitwerk
+ - supports zeitwerk, redmine 5+
  
 **1.1.1
  - correction of French accents
