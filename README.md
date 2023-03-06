@@ -62,6 +62,12 @@ note: if you leave this field empty (select empty menu item), then this project 
 
 ### Change-Log* 
 
+**1.2.0
+ - supports zeitwerk
+ 
+**1.1.1
+ - correction of French accents
+
 **1.1.0**
  - supports redmine 4+
  - cleaned code
